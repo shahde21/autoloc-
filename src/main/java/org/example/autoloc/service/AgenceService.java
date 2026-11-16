@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AgenceService {
+    Agence ajouterAgenceEtAffecterVehicules(Agence agence);
 
     Agence ajouter(Agence agence);
 

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EmployeService {
+    Employe desaffecterEmploye(Long idEmploye);
 
     Employe ajouter(Employe employe);
 
@@ -13,6 +14,7 @@ public interface EmployeService {
     Optional<Employe> afficherParId(Long id);
 
     Employe modifier(Long id, Employe employe);
+    Employe affecterEmploye(Long idEmploye, Long idAgence);
 
     void supprimer(Long id);
 }

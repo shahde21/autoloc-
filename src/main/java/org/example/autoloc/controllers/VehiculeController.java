@@ -1,5 +1,6 @@
 package org.example.autoloc.controllers;
-
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.example.autoloc.entities.Vehicule;
 import org.example.autoloc.service.VehiculeService;
 import org.springframework.web.bind.annotation.*;
@@ -40,4 +41,21 @@ public class VehiculeController {
     public void supprimer(@PathVariable Long id) {
         service.supprimer(id);
     }
+
+    @PutMapping("/{idVehicule}/affecter-equipement/{idEquipement}")
+    public Vehicule affecterEquipement(
+            @PathVariable Long idVehicule,
+            @PathVariable Long idEquipement) {
+
+        return service.affecterEquipement(idVehicule, idEquipement);
+    }
+
+    @PutMapping("/{idVehicule}/desaffecter-equipement/{idEquipement}")
+    public Vehicule desaffecterEquipement(
+            @PathVariable Long idVehicule,
+            @PathVariable Long idEquipement) {
+
+        return service.desaffecterEquipement(idVehicule, idEquipement);
+    }
+
 }

@@ -40,4 +40,10 @@ public class AgenceController {
     public void supprimer(@PathVariable Long id) {
         service.supprimer(id);
     }
+    @PostMapping("/ajouter-avec-vehicules")
+    public Agence ajouterAgenceEtAffecterVehicules(
+            @RequestBody Agence agence) {
+
+        return service.ajouterAgenceEtAffecterVehicules(agence);
+    }
 }
